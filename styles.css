@@ -20,21 +20,21 @@ header {
     margin-bottom: 20px;
 }
 
-.food-form {
+#authSection, #foodSection {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    flex-direction: column;
+    align-items: center;
 }
 
-#foodInput {
-    width: 80%;
+#authSection input, #foodSection input {
+    margin-bottom: 10px;
     padding: 10px;
+    width: 80%;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-#addFoodButton {
-    width: 15%;
+#authSection button, #foodSection button {
     padding: 10px;
     border: none;
     background-color: #28a745;
@@ -43,16 +43,17 @@ header {
     cursor: pointer;
 }
 
-#addFoodButton:hover {
+#authSection button:hover, #foodSection button:hover {
     background-color: #218838;
 }
 
-.food-list {
+#foodList {
     list-style: none;
     padding: 0;
+    width: 80%;
 }
 
-.food-list li {
+#foodList li {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -60,7 +61,7 @@ header {
     border-bottom: 1px solid #ddd;
 }
 
-.food-list li button {
+#foodList li button {
     background-color: #dc3545;
     color: white;
     border: none;
@@ -69,6 +70,6 @@ header {
     cursor: pointer;
 }
 
-.food-list li button:hover {
+#foodList li button:hover {
     background-color: #c82333;
 }
