@@ -11,11 +11,30 @@
         <header>
             <h1>Food Fiesta</h1>
         </header>
-        <div class="food-form">
-            <input type="text" id="foodInput" placeholder="Enter food item">
-            <button id="addFoodButton">Add Food</button>
+        <div id="authSection">
+            <div id="loginSection">
+                <h2>Login</h2>
+                <input type="text" id="username" placeholder="Username">
+                <input type="password" id="password" placeholder="Password">
+                <button id="loginButton">Login</button>
+                <p id="loginMessage"></p>
+            </div>
+            <div id="signupSection">
+                <h2>Sign Up</h2>
+                <input type="text" id="newUsername" placeholder="Username">
+                <input type="password" id="newPassword" placeholder="Password">
+                <button id="signupButton">Sign Up</button>
+                <p id="signupMessage"></p>
+            </div>
         </div>
-        <ul id="foodList" class="food-list"></ul>
+        <div id="foodSection" style="display: none;">
+            <div class="food-form">
+                <input type="text" id="foodInput" placeholder="Enter food item">
+                <button id="addFoodButton">Add Food</button>
+            </div>
+            <ul id="foodList" class="food-list"></ul>
+            <button id="logoutButton">Logout</button>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
