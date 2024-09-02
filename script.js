@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const authSection = document.getElementById('authSection');
     const foodSection = document.getElementById('foodSection');
 
-
+    // Show or hide sections based on authentication
     const updateUI = () => {
         if (localStorage.getItem('authenticated') === 'true') {
             authSection.style.display = 'none';
@@ -23,12 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-
+    // Login functionality
     loginButton.addEventListener('click', () => {
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
-        
 
+        // Check credentials (this is just a mock; in real applications, use secure methods)
         if (username === 'user' && password === 'password') {
             localStorage.setItem('authenticated', 'true');
             updateUI();
@@ -37,12 +37,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-
+    // Sign up functionality
     signupButton.addEventListener('click', () => {
         const newUsername = document.getElementById('newUsername').value;
         const newPassword = document.getElementById('newPassword').value;
 
-
+        // Save credentials (this is just a mock; in real applications, use secure methods)
         if (newUsername && newPassword) {
             localStorage.setItem('username', newUsername);
             localStorage.setItem('password', newPassword);
@@ -52,13 +52,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-
+    // Logout functionality
     logoutButton.addEventListener('click', () => {
         localStorage.removeItem('authenticated');
         updateUI();
     });
 
-
+    // Add food item
     addFoodButton.addEventListener('click', () => {
         const foodItem = foodInput.value.trim();
 
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-
+    // Order functionality
     orderButton.addEventListener('click', () => {
         const orderItems = Array.from(foodList.querySelectorAll('li')).map(li => li.textContent.replace('Delete', '').trim());
 
@@ -87,17 +87,16 @@ document.addEventListener('DOMContentLoaded', () => {
             orderItemList.textContent = `Order: ${orderItems.join(', ')}`;
             orderList.appendChild(orderItemList);
 
-
             foodList.innerHTML = '';
         } else {
             alert('Add some food items before placing an order.');
         }
     });
 
-
+    // Check authentication status on page load
     updateUI();
 
-
+    // Allow pressing Enter to add food item
     foodInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
             addFoodButton.click();
